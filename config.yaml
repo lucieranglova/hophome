@@ -1,1 +1,36 @@
+# HopHome Configuration
+# Adjust filters and scoring weights here
 
+filters:
+  max_price_aud_month: 2500   # maximum monthly rent in AUD
+  min_bedrooms: 2             # minimum number of bedrooms
+  property_types:             # allowed property types
+    - house
+    - apartment
+  location: "Brisbane"
+  state: "QLD"
+
+scoring:
+  weights:
+    price_vs_average: 30      # how cheap vs suburb average
+    distance_cbd: 20          # closer = better
+    distance_beach: 20        # closer = better
+    property_type: 15         # house > apartment
+    bedrooms: 15              # more = better
+  thresholds:
+    high_score: 80            # alert if score >= this
+    price_drop_pct: 5         # alert if price dropped >= this %
+
+references:
+  brisbane_cbd:
+    lat: -27.4698
+    lon: 153.0251
+  nearest_beach:              # Gold Coast / Sunshine Coast reference
+    lat: -27.9944
+    lon: 153.4306
+  suburb_avg_price_aud_week: 550   # fallback if no suburb data
+
+alerts:
+  new_listing: true
+  price_drop: true
+  high_score: true
