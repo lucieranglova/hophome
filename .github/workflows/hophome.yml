@@ -1,1 +1,43 @@
+name: HopHome — Rental Alerts
 
+on:
+  schedule:
+    # Every day at 17:00 UTC (= 19:00 CEST)
+    - cron: "0 17 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt --break-system-packages
+
+      - name: Create data directory
+        run: mkdir -p data
+
+      - name: Run HopHome
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python main.py
+
+      - name: Commit database and logs
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
+          git add data/hophome.db data/hophome.log || true
+          git diff --cached --quiet || git commit -m "data: HopHome update $(date +%Y-%m-%d) [skip ci]"
+          git push
