@@ -1,0 +1,9 @@
+2026-04-06 12:16:25,478 [INFO] hophome.main — ============================================================
+2026-04-06 12:16:25,478 [INFO] hophome.main — 🦘 HopHome starting...
+2026-04-06 12:16:25,478 [INFO] hophome.main — ============================================================
+2026-04-06 12:16:25,486 [INFO] modules.database — Database initialized.
+2026-04-06 12:16:25,486 [INFO] hophome.main — Step 1/5 — Fetching listings from Domain.com.au...
+2026-04-06 12:16:25,486 [INFO] modules.scraper — Scraping page 1: https://www.domain.com.au/rent/brisbane-region-qld/?bedrooms=2-any&price=0-600&excludedeposittaken=1&page=1
+2026-04-06 12:16:40,680 [ERROR] modules.scraper — Scraping error on page 1: HTTPSConnectionPool(host='www.domain.com.au', port=443): Read timed out. (read timeout=15)
+2026-04-06 12:16:40,680 [INFO] modules.scraper — Fetched 0 listings, 0 after filtering.
+2026-04-06 12:16:40,680 [WARNING] hophome.main — No listings found. Exiting.
