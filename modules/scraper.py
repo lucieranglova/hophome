@@ -39,7 +39,7 @@ def fetch_listings(config: dict) -> list[dict]:
         logger.info(f"Scraping page {page}: {url}")
 
         try:
-            resp = requests.get(url, headers=HEADERS, timeout=15)
+            resp = requests.get(url, headers=HEADERS, timeout=60)
             resp.raise_for_status()
         except requests.RequestException as e:
             logger.error(f"Scraping error on page {page}: {e}")
