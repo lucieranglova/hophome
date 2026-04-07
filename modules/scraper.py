@@ -15,6 +15,7 @@ DOMAIN_CLIENT_SECRET = os.environ.get("DOMAIN_CLIENT_SECRET")
 
 TOKEN_URL  = "https://auth.domain.com.au/v1/connect/token"
 SEARCH_URL = "https://api.domain.com.au/sandbox/v1/listings/residential/_search"
+SANDBOX    = True
 
 
 def get_access_token() -> str:
@@ -31,9 +32,6 @@ def get_access_token() -> str:
     )
     resp.raise_for_status()
     token = resp.json().get("access_token")
-    logger.info(f"Token response: {resp.json()}")
-    logger.info("Domain API token obtained.")
-    return token
     logger.info("Domain API token obtained.")
     return token
 
@@ -51,7 +49,12 @@ def fetch_listings(config: dict) -> list[dict]:
     min_bedrooms    = config["filters"]["min_bedrooms"]
 
     token    = get_access_token()
-    headers  = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+    headers  = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json",
+    }
+    if SANDBOX:
+        logger.info("Running in SANDBOX mode.")
 
     all_listings = []
     page         = 1
@@ -85,10 +88,10 @@ def fetch_listings(config: dict) -> list[dict]:
         resp = requests.post(SEARCH_URL, json=payload, headers=headers, timeout=20)
 
         if resp.status_code == 401:
-            logger.error("Domain API: Unauthorized. Check credentials.")
+            logger.error(f"Domain API: Unauthorized. Response: {resp.text[:500]}")
             break
         if not resp.ok:
-            logger.error(f"Domain API error {resp.status_code}: {resp.text[:200]}")
+            logger.error(f"Domain API error {resp.status_code}: {resp.text[:500]}")
             break
 
         data = resp.json()
