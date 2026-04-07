@@ -59,3 +59,14 @@
 2026-04-07 18:50:16,135 [ERROR] modules.scraper — Domain API: Unauthorized. Check credentials.
 2026-04-07 18:50:16,135 [INFO] modules.scraper — Total: 0 listings, 0 after type filter.
 2026-04-07 18:50:16,136 [WARNING] hophome.main — No listings found. Exiting.
+2026-04-07 18:54:07,566 [INFO] hophome.main — ============================================================
+2026-04-07 18:54:07,566 [INFO] hophome.main — 🦘 HopHome starting...
+2026-04-07 18:54:07,566 [INFO] hophome.main — ============================================================
+2026-04-07 18:54:07,569 [INFO] modules.database — Database initialized.
+2026-04-07 18:54:07,569 [INFO] hophome.main — Step 1/5 — Fetching listings from Domain.com.au...
+2026-04-07 18:54:08,038 [INFO] modules.scraper — Token response: {'access_token': '6f458a61c23b344d14c6c7a80a842176', 'expires_in': 43200, 'token_type': 'Bearer', 'scope': 'api_agencies_read api_listings_read'}
+2026-04-07 18:54:08,038 [INFO] modules.scraper — Domain API token obtained.
+2026-04-07 18:54:08,039 [INFO] modules.scraper — Fetching page 1 from Domain API...
+2026-04-07 18:54:08,890 [ERROR] modules.scraper — Domain API: Unauthorized. Check credentials.
+2026-04-07 18:54:08,890 [INFO] modules.scraper — Total: 0 listings, 0 after type filter.
+2026-04-07 18:54:08,891 [WARNING] hophome.main — No listings found. Exiting.
