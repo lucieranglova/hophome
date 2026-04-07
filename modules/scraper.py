@@ -89,6 +89,7 @@ def fetch_listings(config: dict) -> list[dict]:
             break
 
         data = resp.json()
+        logger.info(f"API response sample: {str(data)[:500]}")
         if not data:
             logger.info(f"No more results on page {page}.")
             break
