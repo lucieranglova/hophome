@@ -30,7 +30,9 @@ jobs:
 
       - name: Run HopHome
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_URL:  ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DOMAIN_CLIENT_ID:     ${{ secrets.DOMAIN_CLIENT_ID }}
+          DOMAIN_CLIENT_SECRET: ${{ secrets.DOMAIN_CLIENT_SECRET }}
         run: python main.py
 
       - name: Commit database and logs
