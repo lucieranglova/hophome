@@ -31,6 +31,9 @@ def get_access_token() -> str:
     )
     resp.raise_for_status()
     token = resp.json().get("access_token")
+    logger.info(f"Token response: {resp.json()}")
+    logger.info("Domain API token obtained.")
+    return token
     logger.info("Domain API token obtained.")
     return token
 
