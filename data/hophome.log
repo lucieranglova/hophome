@@ -191,3 +191,71 @@ Traceback (most recent call last):
     conn.execute("""
 sqlite3.OperationalError: no such column: transit_cbd_mode
 2026-04-07 19:22:46,984 [INFO] hophome.main — Done. Total: 5 | New: 0 | Price drops: 0
+2026-04-07 19:24:02,287 [INFO] hophome.main — ============================================================
+2026-04-07 19:24:02,287 [INFO] hophome.main — 🦘 HopHome starting...
+2026-04-07 19:24:02,287 [INFO] hophome.main — ============================================================
+2026-04-07 19:24:02,291 [INFO] modules.database — Database initialized.
+2026-04-07 19:24:02,291 [INFO] hophome.main — Step 1/5 — Fetching listings from Domain.com.au...
+2026-04-07 19:24:03,023 [INFO] modules.scraper — Domain API token obtained.
+2026-04-07 19:24:03,024 [INFO] modules.scraper — Fetching page 1 from Domain API...
+2026-04-07 19:24:04,236 [ERROR] modules.scraper — Domain API error 403: {
+  "type": "https://developer.domain.com.au/docs/latest/conventions/access",
+  "title": "Not Authorized",
+  "detail": "Operation not permitted on project"
+}
+2026-04-07 19:24:04,237 [WARNING] modules.scraper — API returned 0 listings — falling back to mock data.
+2026-04-07 19:24:04,238 [INFO] modules.scraper — Using MOCK listings for testing.
+2026-04-07 19:24:04,238 [INFO] hophome.main — Fetched 5 listings after filtering.
+2026-04-07 19:24:04,238 [INFO] hophome.main — Processing 1/5: mock-001 — Fig Tree Pocket
+2026-04-07 19:24:06,823 [INFO] modules.enrichment — ALA: loaded sightings for 1 suburbs.
+2026-04-07 19:24:06,824 [ERROR] hophome.main — Error processing listing mock-001: no such column: transit_cbd_mode
+Traceback (most recent call last):
+  File "/home/runner/work/hophome/hophome/main.py", line 74, in main
+    db_result = upsert_listing(listing)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hophome/hophome/modules/database.py", line 119, in upsert_listing
+    conn.execute("""
+sqlite3.OperationalError: no such column: transit_cbd_mode
+2026-04-07 19:24:06,825 [INFO] hophome.main — Processing 2/5: mock-002 — Fortitude Valley
+2026-04-07 19:24:12,484 [WARNING] modules.enrichment — Overpass school lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:24:22,148 [WARNING] modules.enrichment — Overpass hospital lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:24:22,150 [ERROR] hophome.main — Error processing listing mock-002: no such column: transit_cbd_mode
+Traceback (most recent call last):
+  File "/home/runner/work/hophome/hophome/main.py", line 74, in main
+    db_result = upsert_listing(listing)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hophome/hophome/modules/database.py", line 119, in upsert_listing
+    conn.execute("""
+sqlite3.OperationalError: no such column: transit_cbd_mode
+2026-04-07 19:24:22,150 [INFO] hophome.main — Processing 3/5: mock-003 — Camp Hill
+2026-04-07 19:24:28,375 [WARNING] modules.enrichment — Overpass hospital lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:24:28,376 [ERROR] hophome.main — Error processing listing mock-003: no such column: transit_cbd_mode
+Traceback (most recent call last):
+  File "/home/runner/work/hophome/hophome/main.py", line 74, in main
+    db_result = upsert_listing(listing)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hophome/hophome/modules/database.py", line 119, in upsert_listing
+    conn.execute("""
+sqlite3.OperationalError: no such column: transit_cbd_mode
+2026-04-07 19:24:28,377 [INFO] hophome.main — Processing 4/5: mock-004 — Graceville
+2026-04-07 19:24:34,557 [WARNING] modules.enrichment — Overpass hospital lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:24:34,559 [ERROR] hophome.main — Error processing listing mock-004: no such column: transit_cbd_mode
+Traceback (most recent call last):
+  File "/home/runner/work/hophome/hophome/main.py", line 74, in main
+    db_result = upsert_listing(listing)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hophome/hophome/modules/database.py", line 119, in upsert_listing
+    conn.execute("""
+sqlite3.OperationalError: no such column: transit_cbd_mode
+2026-04-07 19:24:34,559 [INFO] hophome.main — Processing 5/5: mock-005 — Bardon
+2026-04-07 19:24:39,536 [WARNING] modules.enrichment — Overpass school lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:24:44,594 [WARNING] modules.enrichment — Overpass hospital lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:24:44,596 [ERROR] hophome.main — Error processing listing mock-005: no such column: transit_cbd_mode
+Traceback (most recent call last):
+  File "/home/runner/work/hophome/hophome/main.py", line 74, in main
+    db_result = upsert_listing(listing)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hophome/hophome/modules/database.py", line 119, in upsert_listing
+    conn.execute("""
+sqlite3.OperationalError: no such column: transit_cbd_mode
+2026-04-07 19:24:44,596 [INFO] hophome.main — Done. Total: 5 | New: 0 | Price drops: 0
