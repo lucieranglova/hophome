@@ -14,7 +14,7 @@ DOMAIN_CLIENT_ID     = os.environ.get("DOMAIN_CLIENT_ID")
 DOMAIN_CLIENT_SECRET = os.environ.get("DOMAIN_CLIENT_SECRET")
 
 TOKEN_URL  = "https://auth.domain.com.au/v1/connect/token"
-SEARCH_URL = "https://api.domain.com.au/v1/listings/residential/_search"
+SEARCH_URL = "https://api.domain.com.au/sandbox/v1/listings/residential/_search"
 
 
 def get_access_token() -> str:
@@ -25,7 +25,7 @@ def get_access_token() -> str:
             "grant_type":    "client_credentials",
             "client_id":     DOMAIN_CLIENT_ID,
             "client_secret": DOMAIN_CLIENT_SECRET,
-            "scope":         "api_listings_read",
+            "scope":         "api_listings_read api_agencies_read",
         },
         timeout=15,
     )
@@ -89,7 +89,6 @@ def fetch_listings(config: dict) -> list[dict]:
             break
 
         data = resp.json()
-        logger.info(f"API response sample: {str(data)[:500]}")
         if not data:
             logger.info(f"No more results on page {page}.")
             break
