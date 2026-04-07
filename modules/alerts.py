@@ -133,14 +133,14 @@ def _build_payload(listing: dict, alert_types: list[str], rate: float) -> dict:
     if dist_hospital is not None:
         hospital_line = f"\n🏥 Nearest hospital: **{name_hospital}** ({dist_hospital} km)"
 
-    # Score bar
+    # Score emoji
     score_emoji = _score_emoji(score)
-    score_bar   = _score_bar(score)
 
     description = (
         f"📍 **{listing.get('suburb', '?')}** · {prop_emoji} {prop_label}\n"
         f"💰 **${price_week:.0f}/week** · ${price_month:.0f}/month (~{price_czk:,} CZK)\n"
-        f"🛏 **{beds} bedrooms** · 🔍 Inspection: {inspection}\n"
+        f"🛏 **{beds} bedrooms**\n"
+        f"🔍 Inspection: {inspection}\n"
         f"\n"
         f"🏙️ CBD: **{dist_cbd} km** · {mode_cbd} ~{t_cbd} min\n"
         f"🌊 Beach: **{dist_beach} km** · {mode_beach} ~{t_beach} min\n"
@@ -149,7 +149,7 @@ def _build_payload(listing: dict, alert_types: list[str], rate: float) -> dict:
         f"{hospital_line}"
         f"{drop_line}\n"
         f"\n"
-        f"{score_emoji} Score: **{score}/100**  `{score_bar}`\n"
+        f"{score_emoji} Score: **{score}/100**\n"
         f"🔗 [View listing]({listing.get('url', '')})"
     )
 
