@@ -85,3 +85,41 @@
 }
 2026-04-07 18:57:29,875 [INFO] modules.scraper — Total: 0 listings, 0 after type filter.
 2026-04-07 18:57:29,876 [WARNING] hophome.main — No listings found. Exiting.
+2026-04-07 19:05:41,057 [INFO] hophome.main — ============================================================
+2026-04-07 19:05:41,057 [INFO] hophome.main — 🦘 HopHome starting...
+2026-04-07 19:05:41,057 [INFO] hophome.main — ============================================================
+2026-04-07 19:05:41,060 [INFO] modules.database — Database initialized.
+2026-04-07 19:05:41,060 [INFO] hophome.main — Step 1/5 — Fetching listings from Domain.com.au...
+2026-04-07 19:05:41,396 [INFO] modules.scraper — Domain API token obtained.
+2026-04-07 19:05:41,397 [INFO] modules.scraper — Fetching page 1 from Domain API...
+2026-04-07 19:05:42,265 [ERROR] modules.scraper — Domain API error 403: {
+  "type": "https://developer.domain.com.au/docs/latest/conventions/access",
+  "title": "Not Authorized",
+  "detail": "Operation not permitted on project"
+}
+2026-04-07 19:05:42,266 [WARNING] modules.scraper — API returned 0 listings — falling back to mock data.
+2026-04-07 19:05:42,267 [INFO] modules.scraper — Using MOCK listings for testing.
+2026-04-07 19:05:42,267 [INFO] hophome.main — Fetched 5 listings after filtering.
+2026-04-07 19:05:42,267 [INFO] hophome.main — Processing 1/5: mock-001 — Fig Tree Pocket
+2026-04-07 19:05:43,080 [INFO] modules.enrichment — ALA: loaded sightings for 1 suburbs.
+2026-04-07 19:05:43,082 [INFO] modules.database — New listing: mock-001 — Fig Tree Pocket
+2026-04-07 19:05:43,084 [INFO] modules.detector — [NEW] mock-001 — Fig Tree Pocket
+2026-04-07 19:05:43,709 [INFO] modules.alerts — AUD/CZK rate: 14.7201
+2026-04-07 19:05:43,958 [INFO] modules.alerts — Alert sent for mock-001 (new)
+2026-04-07 19:05:43,959 [INFO] hophome.main — Processing 2/5: mock-002 — Fortitude Valley
+2026-04-07 19:05:43,960 [INFO] modules.database — New listing: mock-002 — Fortitude Valley
+2026-04-07 19:05:43,962 [INFO] modules.detector — [NEW] mock-002 — Fortitude Valley
+2026-04-07 19:05:44,185 [INFO] modules.alerts — Alert sent for mock-002 (new)
+2026-04-07 19:05:44,186 [INFO] hophome.main — Processing 3/5: mock-003 — Camp Hill
+2026-04-07 19:05:44,187 [INFO] modules.database — New listing: mock-003 — Camp Hill
+2026-04-07 19:05:44,189 [INFO] modules.detector — [NEW] mock-003 — Camp Hill
+2026-04-07 19:05:44,456 [INFO] modules.alerts — Alert sent for mock-003 (new)
+2026-04-07 19:05:44,457 [INFO] hophome.main — Processing 4/5: mock-004 — Graceville
+2026-04-07 19:05:44,459 [INFO] modules.database — New listing: mock-004 — Graceville
+2026-04-07 19:05:44,460 [INFO] modules.detector — [NEW] mock-004 — Graceville
+2026-04-07 19:05:44,889 [INFO] modules.alerts — Alert sent for mock-004 (new)
+2026-04-07 19:05:44,890 [INFO] hophome.main — Processing 5/5: mock-005 — Bardon
+2026-04-07 19:05:44,892 [INFO] modules.database — New listing: mock-005 — Bardon
+2026-04-07 19:05:44,893 [INFO] modules.detector — [NEW] mock-005 — Bardon
+2026-04-07 19:05:45,120 [INFO] modules.alerts — Alert sent for mock-005 (new)
+2026-04-07 19:05:45,121 [INFO] hophome.main — Done. Total: 5 | New: 5 | Price drops: 0
