@@ -24,27 +24,33 @@ def init_db():
     with get_connection() as conn:
         conn.executescript("""
             CREATE TABLE IF NOT EXISTS listings (
-                id              TEXT PRIMARY KEY,
-                title           TEXT,
-                price_aud_week  REAL,
-                price_aud_month REAL,
-                property_type   TEXT,
-                suburb          TEXT,
-                bedrooms        INTEGER,
-                url             TEXT,
-                image_url       TEXT,
-                inspection_date TEXT,
-                lat             REAL,
-                lon             REAL,
-                dist_cbd_km     REAL,
-                dist_beach_km   REAL,
-                transit_cbd_min INTEGER,
-                transit_beach_min INTEGER,
-                kangaroo_chance TEXT,
-                score           REAL,
-                first_seen      TEXT,
-                last_seen       TEXT,
-                active          INTEGER DEFAULT 1
+                id                  TEXT PRIMARY KEY,
+                title               TEXT,
+                price_aud_week      REAL,
+                price_aud_month     REAL,
+                property_type       TEXT,
+                suburb              TEXT,
+                bedrooms            INTEGER,
+                url                 TEXT,
+                image_url           TEXT,
+                inspection_date     TEXT,
+                lat                 REAL,
+                lon                 REAL,
+                dist_cbd_km         REAL,
+                dist_beach_km       REAL,
+                transit_cbd_min     INTEGER,
+                transit_cbd_mode    TEXT,
+                transit_beach_min   INTEGER,
+                transit_beach_mode  TEXT,
+                dist_school_km      REAL,
+                nearest_school      TEXT,
+                dist_hospital_km    REAL,
+                nearest_hospital    TEXT,
+                kangaroo_chance     TEXT,
+                score               REAL,
+                first_seen          TEXT,
+                last_seen           TEXT,
+                active              INTEGER DEFAULT 1
             );
 
             CREATE TABLE IF NOT EXISTS price_history (
@@ -73,14 +79,16 @@ def upsert_listing(listing: dict) -> dict:
         result = {"is_new": False, "price_dropped": False, "old_price": None}
 
         if existing is None:
-            # New listing
             conn.execute("""
                 INSERT INTO listings (
                     id, title, price_aud_week, price_aud_month,
                     property_type, suburb, bedrooms, url, image_url,
                     inspection_date, lat, lon,
                     dist_cbd_km, dist_beach_km,
-                    transit_cbd_min, transit_beach_min,
+                    transit_cbd_min, transit_cbd_mode,
+                    transit_beach_min, transit_beach_mode,
+                    dist_school_km, nearest_school,
+                    dist_hospital_km, nearest_hospital,
                     kangaroo_chance, score,
                     first_seen, last_seen, active
                 ) VALUES (
@@ -88,7 +96,10 @@ def upsert_listing(listing: dict) -> dict:
                     :property_type, :suburb, :bedrooms, :url, :image_url,
                     :inspection_date, :lat, :lon,
                     :dist_cbd_km, :dist_beach_km,
-                    :transit_cbd_min, :transit_beach_min,
+                    :transit_cbd_min, :transit_cbd_mode,
+                    :transit_beach_min, :transit_beach_mode,
+                    :dist_school_km, :nearest_school,
+                    :dist_hospital_km, :nearest_hospital,
                     :kangaroo_chance, :score,
                     :first_seen, :last_seen, 1
                 )
@@ -112,6 +123,12 @@ def upsert_listing(listing: dict) -> dict:
                     price_aud_month = :price_aud_month,
                     inspection_date = :inspection_date,
                     image_url = :image_url,
+                    transit_cbd_mode = :transit_cbd_mode,
+                    transit_beach_mode = :transit_beach_mode,
+                    dist_school_km = :dist_school_km,
+                    nearest_school = :nearest_school,
+                    dist_hospital_km = :dist_hospital_km,
+                    nearest_hospital = :nearest_hospital,
                     score = :score,
                     kangaroo_chance = :kangaroo_chance,
                     last_seen = :last_seen,
