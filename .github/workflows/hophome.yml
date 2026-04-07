@@ -26,7 +26,9 @@ jobs:
         run: pip install -r requirements.txt --break-system-packages
 
       - name: Create data directory
-        run: mkdir -p data
+        run: |
+          mkdir -p data
+          rm -f data/hophome.db
 
       - name: Run HopHome
         env:
