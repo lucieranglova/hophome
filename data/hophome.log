@@ -70,3 +70,18 @@
 2026-04-07 18:54:08,890 [ERROR] modules.scraper — Domain API: Unauthorized. Check credentials.
 2026-04-07 18:54:08,890 [INFO] modules.scraper — Total: 0 listings, 0 after type filter.
 2026-04-07 18:54:08,891 [WARNING] hophome.main — No listings found. Exiting.
+2026-04-07 18:57:28,361 [INFO] hophome.main — ============================================================
+2026-04-07 18:57:28,362 [INFO] hophome.main — 🦘 HopHome starting...
+2026-04-07 18:57:28,362 [INFO] hophome.main — ============================================================
+2026-04-07 18:57:28,365 [INFO] modules.database — Database initialized.
+2026-04-07 18:57:28,365 [INFO] hophome.main — Step 1/5 — Fetching listings from Domain.com.au...
+2026-04-07 18:57:29,213 [INFO] modules.scraper — Domain API token obtained.
+2026-04-07 18:57:29,215 [INFO] modules.scraper — Running in SANDBOX mode.
+2026-04-07 18:57:29,215 [INFO] modules.scraper — Fetching page 1 from Domain API...
+2026-04-07 18:57:29,874 [ERROR] modules.scraper — Domain API: Unauthorized. Response: {
+  "type": "https://developer.domain.com.au/docs/latest/conventions/access",
+  "title": "Not Authorized",
+  "detail": "Operation not allowed in environment [Sandbox]. Use [Primary]"
+}
+2026-04-07 18:57:29,875 [INFO] modules.scraper — Total: 0 listings, 0 after type filter.
+2026-04-07 18:57:29,876 [WARNING] hophome.main — No listings found. Exiting.
