@@ -21,3 +21,17 @@
 }
 2026-04-07 18:35:31,205 [INFO] modules.scraper — Total: 0 listings, 0 after type filter.
 2026-04-07 18:35:31,206 [WARNING] hophome.main — No listings found. Exiting.
+2026-04-07 18:43:17,479 [INFO] hophome.main — ============================================================
+2026-04-07 18:43:17,479 [INFO] hophome.main — 🦘 HopHome starting...
+2026-04-07 18:43:17,479 [INFO] hophome.main — ============================================================
+2026-04-07 18:43:17,482 [INFO] modules.database — Database initialized.
+2026-04-07 18:43:17,482 [INFO] hophome.main — Step 1/5 — Fetching listings from Domain.com.au...
+2026-04-07 18:43:18,088 [INFO] modules.scraper — Domain API token obtained.
+2026-04-07 18:43:18,090 [INFO] modules.scraper — Fetching page 1 from Domain API...
+2026-04-07 18:43:18,987 [ERROR] modules.scraper — Domain API error 403: {
+  "type": "https://developer.domain.com.au/docs/latest/conventions/access",
+  "title": "Not Authorized",
+  "detail": "Operation not permitted on project"
+}
+2026-04-07 18:43:18,987 [INFO] modules.scraper — Total: 0 listings, 0 after type filter.
+2026-04-07 18:43:18,988 [WARNING] hophome.main — No listings found. Exiting.
