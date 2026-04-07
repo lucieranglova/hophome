@@ -26,10 +26,7 @@ jobs:
         run: pip install -r requirements.txt --break-system-packages
 
       - name: Create data directory
-        run: |
-          mkdir -p data
-          # Smaž DB pokud existuje staré schéma (jednorázově)
-          rm -f data/hophome.db
+        run: mkdir -p data
 
       - name: Run HopHome
         env:
@@ -42,7 +39,9 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git stash
           git pull --rebase origin main
+          git stash pop || true
           git add data/hophome.db data/hophome.log || true
           git diff --cached --quiet || git commit -m "data: HopHome update $(date +%Y-%m-%d) [skip ci]"
           git push
