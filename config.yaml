@@ -2,9 +2,9 @@
 # Adjust filters and scoring weights here
 
 filters:
-  max_price_aud_month: 2500   # maximum monthly rent in AUD
-  min_bedrooms: 2             # minimum number of bedrooms
-  property_types:             # allowed property types
+  max_price_aud_month: 2500
+  min_bedrooms: 2
+  property_types:
     - house
     - apartment
   location: "Brisbane"
@@ -12,23 +12,27 @@ filters:
 
 scoring:
   weights:
-    price_vs_average: 30      # how cheap vs suburb average
-    distance_cbd: 20          # closer = better
-    distance_beach: 20        # closer = better
-    property_type: 15         # house > apartment
-    bedrooms: 15              # more = better
+    price_vs_average: 20    # sníženo — beach je teď priorita
+    distance_cbd: 10        # sníženo
+    distance_beach: 35      # zvýšeno — chceme být blíž pláži!
+    property_type: 15
+    bedrooms: 20            # zvýšeno
   thresholds:
-    high_score: 80            # alert if score >= this
-    price_drop_pct: 5         # alert if price dropped >= this %
+    high_score: 80
+    price_drop_pct: 5
+
+enrichment:
+  show_school: true         # zobrazit vzdálenost k nejbližší škole
+  show_hospital: true       # zobrazit vzdálenost k nejbližší nemocnici
 
 references:
   brisbane_cbd:
     lat: -27.4698
     lon: 153.0251
-  nearest_beach:              # Gold Coast / Sunshine Coast reference
+  nearest_beach:
     lat: -27.9944
     lon: 153.4306
-  suburb_avg_price_aud_week: 550   # fallback if no suburb data
+  suburb_avg_price_aud_week: 550
 
 alerts:
   new_listing: true
