@@ -347,3 +347,49 @@ sqlite3.OperationalError: no such column: transit_cbd_mode
 2026-04-08 18:09:17,543 [INFO] modules.detector — [NEW] mock-005 — Bardon
 2026-04-08 18:09:17,747 [INFO] modules.alerts — Alert sent for mock-005 (new)
 2026-04-08 18:09:17,748 [INFO] hophome.main — Done. Total: 5 | New: 5 | Price drops: 0
+2026-04-09 18:00:09,763 [INFO] hophome.main — ============================================================
+2026-04-09 18:00:09,763 [INFO] hophome.main — 🦘 HopHome starting...
+2026-04-09 18:00:09,763 [INFO] hophome.main — ============================================================
+2026-04-09 18:00:09,770 [INFO] modules.database — Database initialized.
+2026-04-09 18:00:09,770 [INFO] hophome.main — Step 1/5 — Fetching listings from Domain.com.au...
+2026-04-09 18:00:10,346 [INFO] modules.scraper — Domain API token obtained.
+2026-04-09 18:00:10,347 [INFO] modules.scraper — Fetching page 1 from Domain API...
+2026-04-09 18:00:11,013 [ERROR] modules.scraper — Domain API error 403: {
+  "type": "https://developer.domain.com.au/docs/latest/conventions/access",
+  "title": "Not Authorized",
+  "detail": "Operation not permitted on project"
+}
+2026-04-09 18:00:11,014 [WARNING] modules.scraper — API returned 0 listings — falling back to mock data.
+2026-04-09 18:00:11,014 [INFO] modules.scraper — Using MOCK listings for testing.
+2026-04-09 18:00:11,014 [INFO] hophome.main — Fetched 5 listings after filtering.
+2026-04-09 18:00:11,015 [INFO] hophome.main — Processing 1/5: mock-001 — Fig Tree Pocket
+2026-04-09 18:00:15,818 [WARNING] modules.enrichment — Overpass school lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-09 18:00:17,582 [INFO] modules.enrichment — ALA: loaded sightings for 0 suburbs.
+2026-04-09 18:00:17,584 [INFO] modules.database — New listing: mock-001 — Fig Tree Pocket
+2026-04-09 18:00:17,588 [INFO] modules.detector — [NEW] mock-001 — Fig Tree Pocket
+2026-04-09 18:00:27,826 [WARNING] modules.alerts — Could not fetch AUD/CZK rate: HTTPSConnectionPool(host='api.frankfurter.dev', port=443): Read timed out. (read timeout=10). Using fallback 15.0
+2026-04-09 18:00:28,377 [INFO] modules.alerts — Alert sent for mock-001 (new)
+2026-04-09 18:00:28,377 [INFO] hophome.main — Processing 2/5: mock-002 — Fortitude Valley
+2026-04-09 18:00:33,603 [WARNING] modules.enrichment — Overpass school lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-09 18:00:37,975 [WARNING] modules.enrichment — Overpass hospital lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-09 18:00:37,977 [INFO] modules.database — New listing: mock-002 — Fortitude Valley
+2026-04-09 18:00:37,978 [INFO] modules.detector — [NEW] mock-002 — Fortitude Valley
+2026-04-09 18:00:38,247 [INFO] modules.alerts — Alert sent for mock-002 (new)
+2026-04-09 18:00:38,249 [INFO] hophome.main — Processing 3/5: mock-003 — Camp Hill
+2026-04-09 18:00:43,236 [WARNING] modules.enrichment — Overpass school lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-09 18:00:44,643 [INFO] modules.database — New listing: mock-003 — Camp Hill
+2026-04-09 18:00:44,646 [INFO] modules.detector — [NEW] mock-003 — Camp Hill
+2026-04-09 18:00:44,836 [INFO] modules.alerts — Alert sent for mock-003 (new)
+2026-04-09 18:00:44,837 [INFO] hophome.main — Processing 4/5: mock-004 — Graceville
+2026-04-09 18:00:50,457 [WARNING] modules.enrichment — Overpass school lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-09 18:00:56,162 [WARNING] modules.enrichment — Overpass hospital lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-09 18:00:56,164 [INFO] modules.database — New listing: mock-004 — Graceville
+2026-04-09 18:00:56,165 [INFO] modules.detector — [NEW] mock-004 — Graceville
+2026-04-09 18:00:56,395 [INFO] modules.alerts — Alert sent for mock-004 (new)
+2026-04-09 18:00:56,396 [INFO] hophome.main — Processing 5/5: mock-005 — Bardon
+2026-04-09 18:01:01,607 [WARNING] modules.enrichment — Overpass school lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-09 18:01:11,461 [WARNING] modules.enrichment — Overpass hospital lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-09 18:01:11,463 [INFO] modules.database — New listing: mock-005 — Bardon
+2026-04-09 18:01:11,464 [INFO] modules.detector — [NEW] mock-005 — Bardon
+2026-04-09 18:01:11,656 [INFO] modules.alerts — Alert sent for mock-005 (new)
+2026-04-09 18:01:11,658 [INFO] hophome.main — Done. Total: 5 | New: 5 | Price drops: 0
