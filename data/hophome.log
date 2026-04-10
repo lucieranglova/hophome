@@ -393,3 +393,47 @@ sqlite3.OperationalError: no such column: transit_cbd_mode
 2026-04-09 18:01:11,464 [INFO] modules.detector — [NEW] mock-005 — Bardon
 2026-04-09 18:01:11,656 [INFO] modules.alerts — Alert sent for mock-005 (new)
 2026-04-09 18:01:11,658 [INFO] hophome.main — Done. Total: 5 | New: 5 | Price drops: 0
+2026-04-10 17:51:19,837 [INFO] hophome.main — ============================================================
+2026-04-10 17:51:19,837 [INFO] hophome.main — 🦘 HopHome starting...
+2026-04-10 17:51:19,837 [INFO] hophome.main — ============================================================
+2026-04-10 17:51:19,844 [INFO] modules.database — Database initialized.
+2026-04-10 17:51:19,844 [INFO] hophome.main — Step 1/5 — Fetching listings from Domain.com.au...
+2026-04-10 17:51:20,200 [INFO] modules.scraper — Domain API token obtained.
+2026-04-10 17:51:20,201 [INFO] modules.scraper — Fetching page 1 from Domain API...
+2026-04-10 17:51:21,058 [ERROR] modules.scraper — Domain API error 403: {
+  "type": "https://developer.domain.com.au/docs/latest/conventions/access",
+  "title": "Not Authorized",
+  "detail": "Operation not permitted on project"
+}
+2026-04-10 17:51:21,059 [WARNING] modules.scraper — API returned 0 listings — falling back to mock data.
+2026-04-10 17:51:21,060 [INFO] modules.scraper — Using MOCK listings for testing.
+2026-04-10 17:51:21,060 [INFO] hophome.main — Fetched 5 listings after filtering.
+2026-04-10 17:51:21,060 [INFO] hophome.main — Processing 1/5: mock-001 — Fig Tree Pocket
+2026-04-10 17:51:29,466 [WARNING] modules.enrichment — Overpass school lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-10 17:51:34,448 [WARNING] modules.enrichment — Overpass hospital lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-10 17:51:35,547 [INFO] modules.enrichment — ALA: loaded sightings for 1 suburbs.
+2026-04-10 17:51:35,549 [INFO] modules.database — New listing: mock-001 — Fig Tree Pocket
+2026-04-10 17:51:35,994 [INFO] modules.detector — [NEW] mock-001 — Fig Tree Pocket
+2026-04-10 17:51:36,538 [INFO] modules.alerts — AUD/CZK rate: 14.7123
+2026-04-10 17:51:36,760 [INFO] modules.alerts — Alert sent for mock-001 (new)
+2026-04-10 17:51:36,761 [INFO] hophome.main — Processing 2/5: mock-002 — Fortitude Valley
+2026-04-10 17:51:44,166 [WARNING] modules.enrichment — Overpass hospital lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-10 17:51:44,168 [INFO] modules.database — New listing: mock-002 — Fortitude Valley
+2026-04-10 17:51:44,169 [INFO] modules.detector — [NEW] mock-002 — Fortitude Valley
+2026-04-10 17:51:44,493 [INFO] modules.alerts — Alert sent for mock-002 (new)
+2026-04-10 17:51:44,495 [INFO] hophome.main — Processing 3/5: mock-003 — Camp Hill
+2026-04-10 17:51:49,476 [WARNING] modules.enrichment — Overpass school lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-10 17:51:54,480 [WARNING] modules.enrichment — Overpass hospital lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-10 17:51:54,482 [INFO] modules.database — New listing: mock-003 — Camp Hill
+2026-04-10 17:51:54,484 [INFO] modules.detector — [NEW] mock-003 — Camp Hill
+2026-04-10 17:51:54,839 [INFO] modules.alerts — Alert sent for mock-003 (new)
+2026-04-10 17:51:54,840 [INFO] hophome.main — Processing 4/5: mock-004 — Graceville
+2026-04-10 17:51:56,919 [INFO] modules.database — New listing: mock-004 — Graceville
+2026-04-10 17:51:56,921 [INFO] modules.detector — [NEW] mock-004 — Graceville
+2026-04-10 17:51:57,059 [INFO] modules.alerts — Alert sent for mock-004 (new)
+2026-04-10 17:51:57,059 [INFO] hophome.main — Processing 5/5: mock-005 — Bardon
+2026-04-10 17:52:02,670 [WARNING] modules.enrichment — Overpass school lookup failed: Expecting value: line 1 column 1 (char 0)
+2026-04-10 17:52:03,573 [INFO] modules.database — New listing: mock-005 — Bardon
+2026-04-10 17:52:03,574 [INFO] modules.detector — [NEW] mock-005 — Bardon
+2026-04-10 17:52:03,788 [INFO] modules.alerts — Alert sent for mock-005 (new)
+2026-04-10 17:52:03,789 [INFO] hophome.main — Done. Total: 5 | New: 5 | Price drops: 0
